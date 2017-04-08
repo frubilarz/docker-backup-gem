@@ -12,6 +12,7 @@ if [ "$1" = 'crond' ]; then
 fi
 
 if [ "$1" = 'backup' ]; then
+	shift
 	set -- backup "$@"
 fi
 

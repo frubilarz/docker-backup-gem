@@ -14,6 +14,7 @@ RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 VOLUME ["/root/Backup"]
+VOLUME ["/root/.ssh"]
 WORKDIR "/root/Backup"
 
 CMD ["crond", "-f"]
