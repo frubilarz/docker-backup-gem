@@ -8,6 +8,7 @@ fi
 
 if [ "$1" = 'crond' ]; then
 	whenever --update-crontab
+	shift
 	set -- crond "$@"
 fi
 
