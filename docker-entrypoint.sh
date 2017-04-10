@@ -7,6 +7,12 @@ if [ "${1#-}" != "$1" ]; then
 fi
 
 if [ "$1" = 'crond' ]; then
+	if [ ! -f config/schedule.rb ]; then
+		if [ ! -d config ]; then
+			mkdir config
+		fi
+		wheneverize
+	fi
 	whenever --update-crontab
 	shift
 	set -- crond "$@"
